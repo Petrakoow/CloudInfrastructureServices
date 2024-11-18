@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+    app:
+        build: .
+        ports:
+            - "5000:5000"
+        depends_on:
+            - database
+
+    database:
+        image: postgres:latest
+        ports:
+            - "5431:5432"
+        environment:
+            - POSTGRES_USER=user
+            - POSTGRES_PASSWORD=password
+            - POSTGRES_DB=flask_db
