@@ -42,7 +42,7 @@ jobs:
       - 
         name: Deploy to Server
         run: |
-          ssh -o StrictHostKeyChecking=no abalonem@10.192.1.134 "
+          ssh -o StrictHostKeyChecking=no abalonem@37.230.157.15 "
             cd CloudInfrastructureServices/lab-5
             git pull
             docker-compose -f docker-compose.yml up -d
@@ -51,7 +51,7 @@ jobs:
       - 
         name: Run Migration Script
         run: |
-          ssh -o StrictHostKeyChecking=no abalonem@10.192.1.134 "
+          ssh -o StrictHostKeyChecking=no abalonem@37.230.157.15 "
             cd CloudInfrastructureServices/lab-5
             chmod +x migration.sh
             ./migration.sh
